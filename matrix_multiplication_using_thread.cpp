@@ -1,5 +1,6 @@
 #include<iostream>
 #include <thread>
+#include <fstream>
 
 
 using namespace std;
@@ -66,6 +67,8 @@ void do_all(matrix one,matrix two,int size,int thread_number)
 
 int main()
 {
+   ifstream cin("one.txt");	/// read from one.txt file
+	
    int n,size; //number of matrix and size
    cin>>n>>size;
    
@@ -99,7 +102,8 @@ int main()
       th[x].join();
    }
    
-   
+  cin.close();
+  return 0;
    
 }
 
